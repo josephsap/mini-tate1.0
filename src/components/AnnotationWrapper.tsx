@@ -135,6 +135,7 @@ function AnnotationWrapper({
       options={options}
       top={top}
       width={width}
+      type={type}
     />
   );
 }

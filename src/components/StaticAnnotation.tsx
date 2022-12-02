@@ -11,6 +11,7 @@ export type Props = {
   width: string;
   onClick: () => void;
   options: TOptions;
+  type: string;
 };
 
 function StaticAnnotation({
@@ -20,17 +21,21 @@ function StaticAnnotation({
   left,
   onClick,
   options,
+  type,
 }: Props) {
-  console.log('STATIC ANNO JSAP FORK')
+  console.log('STATIC ANNO JSAP FORK 1212')
   const styles = options.annoStyles || {};
   return (
-    <div
+    <div>
+      <p>{type}</p>
+      <div
       className="staticAnno"
       data-testid="static-annotation"
       onClick={onClick}
       onPointerDown={(e) => e.stopPropagation()}
       style={{ ...styles, height, width, top, left }}
-    />
+      />
+    </div>
   );
 }
 
