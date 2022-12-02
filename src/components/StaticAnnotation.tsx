@@ -21,6 +21,7 @@ function StaticAnnotation({
   onClick,
   options,
 }: Props) {
+  console.log('STATIC ANNO JSAP FORK')
   const styles = options.annoStyles || {};
   return (
     <div
