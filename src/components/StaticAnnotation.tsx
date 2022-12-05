@@ -13,7 +13,7 @@ export type Props = {
   options: TOptions;
   type: string;
 };
-interface TypeStylesInterface {
+interface AnnoBgStylesInterface {
   account_number?: string;
   invoice_number?: string;
   total_due?: string;
@@ -24,15 +24,26 @@ interface TypeStylesInterface {
   tax_amount?: string;
 }
 
-const typeStyles: TypeStylesInterface = {
-  account_number: `rgb(155, 59, 136)`,
-  contact_email: 'rgb(226, 95, 69)',
-  due_date: 'rgb(150, 177, 73)',
-  invoice_date: 'rgb(76, 114, 182)',
-  invoice_number: 'rgb(0, 94, 70)',
-  tax_amount: 'rgb(168, 37, 85)',
-  total_due: 'rgb(16, 197, 173)',
-  vendor_name: 'rgb(255, 112, 130)'
+const annoBgStyles: AnnoBgStylesInterface = {
+  account_number: 'rgba(155, 59, 136, 0.4)',
+  contact_email: 'rgba(226, 95, 69, 0.4)',
+  due_date: 'rgba(150, 177, 73, 0.4)',
+  invoice_date: 'rgba(76, 114, 182, 0.4)',
+  invoice_number: 'rgba(0, 94, 70, 0.4)',
+  tax_amount: 'rgba(168, 37, 85, 0.4)',
+  total_due: 'rgba(16, 197, 173, 0.4)',
+  vendor_name: 'rgba(255, 112, 130, 0.4)'
+};
+
+const textStyles: AnnoBgStylesInterface = {
+  account_number: 'rgba(155, 59, 136, 1)',
+  contact_email: 'rgba(226, 95, 69, 1)',
+  due_date: 'rgba(150, 177, 73, 1)',
+  invoice_date: 'rgba(76, 114, 182, 1)',
+  invoice_number: 'rgba(0, 94, 70, 1)',
+  tax_amount: 'rgba(168, 37, 85, 1)',
+  total_due: 'rgba(16, 197, 173, 1)',
+  vendor_name: 'rgba(255, 112, 130, 1)'
 };
 
 function StaticAnnotation({
@@ -46,7 +57,7 @@ function StaticAnnotation({
 }: Props) {
 
   const styles = options.annoStyles || {};
-
+  console.log(height, width)
   return (
     <>
       {type !== 'other' ? (
@@ -55,7 +66,7 @@ function StaticAnnotation({
           data-testid="static-annotation"
           onClick={onClick}
           onPointerDown={(e) => e.stopPropagation()}
-          style={{ ...styles, height: height + '15px', width: width + '15px', top, left, backgroundColor: `${typeStyles[type]}` }}
+          style={{ ...styles, height, width, top, left, backgroundColor: `${annoBgStyles[type]}` }}
         >
           <Typography 
             variant="body1" 
@@ -64,7 +75,7 @@ function StaticAnnotation({
               position: 'absolute',
               top: '-17px',
               left: '-50%',
-              color: `${typeStyles[type]}`
+              color: `${textStyles[type]}`
             }}
           >
             {type}
