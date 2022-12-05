@@ -23,7 +23,7 @@ function StaticAnnotation({
   options,
   type,
 }: Props) {
-  console.log('STATIC ANNO JSAP FORK 1212')
+  console.log(type, 'afjasdkljfkla')
   const styles = options.annoStyles || {};
   return (
       <div
@@ -33,10 +33,17 @@ function StaticAnnotation({
       onPointerDown={(e) => e.stopPropagation()}
       style={{ ...styles, height, width, top, left }}
       >
-        <Typography variant="body1" style={{margin: 0,
-position: 'absolute',
-top: '-17px',
-left: '-50%'}}>{type}</Typography>
+        <Typography 
+          variant="body1" 
+          style={{ 
+            margin: 0,
+            position: 'absolute',
+            top: '-17px',
+            left: '-50%'
+          }}
+        >
+          {type}
+        </Typography>
     </div>
   );
 }
