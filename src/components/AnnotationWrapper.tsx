@@ -31,6 +31,7 @@ type Props = {
   removeAnnotation: (name: string) => void;
   annotationTypes: string[];
   options: TOptions;
+  selectedAnnotation?: TAnnotation;
 };
 
 function AnnotationWrapper({

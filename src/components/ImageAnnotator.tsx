@@ -374,6 +374,7 @@ export function ImageAnnotator({
             handlePointerMove={handlePointerMove}
             handleSaveEdit={handleSaveEdit}
             key={annotation.name}
+            selectedAnnotation={selectedAnno}
             options={options}
             removeAnnotation={removeAnnotation}
             {...annotation}
