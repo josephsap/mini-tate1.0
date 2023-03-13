@@ -309,7 +309,7 @@ function ImageAnnotator({ imageSrc, annos, onChange, onError, annotationTypes, o
                     setImgRatio({ height, width });
                     setImgLoaded(true);
                 }, onPointerMove: handlePointerMove, src: imageSrc, style: options.imgStyles ? options.imgStyles : {} }),
-            annotations.map((annotation) => (react_1.default.createElement(AnnotationWrapper_1.default, Object.assign({ annotationTypes: annotationTypes, handleCancelEdit: handleCancelEdit, handleEditAnnotation: handleEditAnnotation, handlePointerMove: handlePointerMove, handleSaveEdit: handleSaveEdit, key: annotation.name, options: options, removeAnnotation: removeAnnotation }, annotation)))),
+            annotations.map((annotation) => (react_1.default.createElement(AnnotationWrapper_1.default, Object.assign({ annotationTypes: annotationTypes, handleCancelEdit: handleCancelEdit, handleEditAnnotation: handleEditAnnotation, handlePointerMove: handlePointerMove, handleSaveEdit: handleSaveEdit, key: annotation.name, selectedAnnotation: selectedAnno, options: options, removeAnnotation: removeAnnotation }, annotation)))),
             displayForm && (react_1.default.createElement(Form_1.default, { annotationTypes: annotationTypes, handleCancel: () => {
                     boundary.remove();
                     setDisplayForm(false);

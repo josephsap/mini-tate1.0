@@ -14,6 +14,7 @@ declare type Props = {
     removeAnnotation: (name: string) => void;
     annotationTypes: string[];
     options: TOptions;
+    selectedAnnotation?: TAnnotation;
 };
 declare function AnnotationWrapper({ handleEditAnnotation, name, height, width, top, left, handleCancelEdit, handlePointerMove, handleSaveEdit, removeAnnotation, type, annotationTypes, options, }: Props): JSX.Element;
 export default AnnotationWrapper;
